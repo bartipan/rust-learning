@@ -6,11 +6,13 @@ fn main() {
     let number = loop {
         let mut number = String::new();
 
-        io::stdin().read_line(&mut number).expect("Failed to read the input");
+        io::stdin()
+            .read_line(&mut number)
+            .expect("Failed to read the input");
 
         match number.trim().parse() {
             Err(_) => println!("Please, type a positive number!"),
-            Ok(i) => break i
+            Ok(i) => break i,
         };
     };
 
